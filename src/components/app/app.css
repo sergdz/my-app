@@ -1,0 +1,12 @@
+.app{
+    width: 40%;
+    margin: 0 auto;
+    border: 2px solid red;
+}
+
+li {
+    color: rgb(13, 13, 13);
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid red;
+}
