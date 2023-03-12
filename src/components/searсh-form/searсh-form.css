@@ -3,3 +3,12 @@
     margin: 0 auto;
 
 }
+
+@media (max-width: 400px) {
+    .search-form__input {
+        width: 80%;
+
+    }
+
+
+  }

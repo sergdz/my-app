@@ -18,3 +18,12 @@ margin: 2%;
 border-radius: 40px;
 background-color:rgba(0, 0, 0, 0.424)
 }
+
+@media (max-width: 400px) {
+    .add-product-form form {
+        width: 80%;
+
+    }
+
+
+  }
