@@ -29,3 +29,11 @@ li {
 input {
     border-radius: 40px;
 }
+
+@media (max-width: 767px) {
+    .app {
+        width: 100%;
+    }
+
+
+  }
