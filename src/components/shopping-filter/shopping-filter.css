@@ -24,3 +24,14 @@
     padding: 7px;
     margin: 10px;
 }
+
+@media (max-width: 767px) {
+    .shopping__filter-btn {
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
