@@ -23,8 +23,11 @@ class App extends Component {
 
       ],
       item: '',
-      filter: '',
+      filter: 'all',
     }
+
+
+
 
     this.maxId = 8
 
@@ -38,7 +41,11 @@ class App extends Component {
       }
 
 
-    })
+    },
+    () => {
+      localStorage.setItem('data', JSON.stringify(this.state.data))
+    }
+    )
   }
 
   addItem = (name, quantity, bay) => {
@@ -46,9 +53,7 @@ class App extends Component {
       name,
       quantity,
       bay,
-
       id: this.maxId++
-
     }
 
     this.setState(({ data }) => {
@@ -56,8 +61,22 @@ class App extends Component {
       return {
         data: newArray
       }
-    })
-  };
+    },
+    () => {
+      localStorage.setItem('data', JSON.stringify(this.state.data))
+    }
+      // сохраняем данные в localStorage после обновления состояния
+      )
+  }
+
+  componentDidMount() {
+    const savedData = localStorage.getItem('data')
+    if (savedData) {
+      this.setState({
+        data: JSON.parse(savedData)
+      })
+    }
+  }
 
   onActive = (id, prop) => {
     /*  const bay = !this.state.data[id - 1].bay
@@ -74,7 +93,13 @@ class App extends Component {
       }),
 
 
-    }))
+
+
+    }),
+    () => {
+      localStorage.setItem('data', JSON.stringify(this.state.data))
+    }
+    )
 
     const data1 = this.state.data[id - 1]
     return data1
@@ -125,6 +150,8 @@ class App extends Component {
   render() {
     const { data, item, filter } = this.state
     const visibleData = this.filterProducts(this.onDataChange(data, item), filter)
+
+
     return (
       <div className="app">
         <Header />

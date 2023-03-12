@@ -1,5 +1,20 @@
 .add-product-form {
 display: flex;
+justify-content:center
+
+}
+.add-product-form input {
+margin: 4px;
+
+}
+.add-product-form form{
+display: flex;
+flex-direction: column;
 justify-content: space-around;
+width: 40%;
 margin: 2%;
+}
+.add-product-form button{
+border-radius: 40px;
+background-color:rgba(0, 0, 0, 0.424)
 }

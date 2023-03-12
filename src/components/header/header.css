@@ -1,13 +1,13 @@
 .header {
   display: flex;
   flex-direction:column;
-  background-color:#4f916b72;
-  width: 48%;
+  align-items: center;
+  background-color:#FEF0EF;
+  width: 100%;
   padding: 10px;
   margin:0 auto;
 
 
-  border-radius: 20px
 }
 
 .header__text {

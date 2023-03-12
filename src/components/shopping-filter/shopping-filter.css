@@ -1,13 +1,26 @@
 .shopping__filter-btn {
     display: flex;
     justify-content: space-evenly;
-    width: 48%;
+    width: fit-content;
     margin: 0 auto;
     margin-top: 2%;
 }
 .btn.btn-primary{
-    background-color: #5fd9e092;
-    margin-top: 4%;
+    background-color: #E9A898;
+    color: black;
+    border: 1px solid black;
+    font-size: 18px;
+    padding: 7px;
+    margin: 10px;
+}
+.btn:hover{
+    background-color:#ffffff00
+}
+.btn.btn-outline-primary{
+
     color: black;
     font-size: 18px;
+    border: 1px solid black;
+    padding: 7px;
+    margin: 10px;
 }

@@ -2,7 +2,7 @@ import { Component } from 'react'
 
 import './list-item.css'
 class ListItem extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             bay: false
@@ -13,17 +13,17 @@ class ListItem extends Component {
         const { id } = this.props;
         const bay = localStorage.getItem(`bay${id}`);
         if (bay) {
-          this.setState({ bay: JSON.parse(bay) });
+            this.setState({ bay: JSON.parse(bay) });
         }
-      }
+    }
 
-      onActive = (e) => {
+    onActive = (e) => {
         const { id } = this.props;
         const bay = !this.state.bay;
         localStorage.setItem(`bay${id}`, JSON.stringify(bay));
         this.setState({ bay });
         this.props.onActive(e);
-      }
+    }
 
 
 
@@ -34,7 +34,7 @@ class ListItem extends Component {
 
         let className = 'shopping__list-item'
         if (bay) {
-             className += ' active'
+            className += ' active'
 
         }
 
@@ -42,14 +42,17 @@ class ListItem extends Component {
 
         return (
             <li className={className}>
-
-                <div className='shopping__list-item-text' > <p>Продукт:</p> {name} <p>Количество:</p> {quantity}</div>
+                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                        <input className="form-check-input" onChange={this.onActive} checked={bay} data-toggle="bay" type="checkbox" value="f" id="flexCheckDefault" />
+                    </label>
+                <div className='shopping__list-item-text'>
+                        <p className='shopping__list-item-name'>Продукт:</p>
+                        <p>{name}</p>
+                        <p className='shopping__list-item-name'>Количество:</p>
+                        <p>{quantity}</p>
+                </div>
                 <div className='shopping__list-item-radio'>
-                    <div className="form-check" >
-                        <input className="form-check-input" onChange={this.onActive} checked={bay}  data-toggle="bay" type="checkbox" value="f" id="flexCheckDefault" />
-                        <label className="form-check-label" htmlFor="flexCheckDefault">
-                        </label>
-                    </div>
+
                     <svg xmlns="http://www.w3.org/2000/svg"
                         width="1em"
                         height="1em"

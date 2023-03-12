@@ -1,26 +1,32 @@
 .shopping__list-item {
     display: flex;
-    background-color:#B3E8C4;
+    background-color:#E9A898;
     margin-top: 10px;
+    padding: 20px;
     box-shadow: 15px 11px 18px rgba(0, 0, 0, 0.447)
 
 
 }
 
 .shopping__list-item.active {
-    width: 60%;
     border-radius: 30px;
     padding: 20px;
 }
 
 .shopping__list-item-text {
-    width: 40%;
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
-    margin: 0 auto;
-    color: #4F8F91;
+    width: 40%;
+    padding-left: 20px;
+    overflow: auto;
+    word-break: break-word;
+
 }
-.shopping__list-item-text > p {
-    color: rgb(28, 135, 229);
+.shopping__list-item-text> p {
+    display: inline-block;
+    padding-bottom: 10px;
+
 }
 
 
@@ -28,12 +34,25 @@
     display: flex;
     width: 40%;
     margin: 0 auto;
-    height: fit-content;
     padding:4px;
-    justify-content: space-around;
 }
 
-.form-check {
-    height: fit-content;
-    padding: 2px
+.form-check-input {
+    display: inline-flex;
+    align-items: center;
+    border-radius:40px;
+  }
+  .form-check-input[type=checkbox] {
+    border-radius: 20px;
+    background: #0e0000;
+    cursor: pointer;
 }
+
+  .form-check-label {
+    margin-left: 5px;
+  }
+
+  .shopping__list-item-name {
+    color: rgb(251, 249, 249);
+    padding-bottom: 10px;
+  }

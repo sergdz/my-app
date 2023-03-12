@@ -35,12 +35,14 @@ class AddProduct extends Component {
                     <input
                         onChange={this.onValueChange}
                         name='name'
+                        placeholder="Введите имя"
                         value={name}
                         type="text" />
 
                     <input
                         onChange={this.onValueChange}
                         name='quantity'
+                        placeholder="Введите количество"
                         value={quantity}
                         type="number" />
 

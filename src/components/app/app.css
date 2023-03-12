@@ -2,21 +2,30 @@
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-color:#4f8f9164
 
 }
 
 .app{
-    background-color: #F7F5C2;
+    font-family: 'Acumin Pro', sans-serif;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 60%;
+    border-radius: 40px;
+    padding: 15px;
+    margin: 5px;
+    outline: 10px solid rgba(36, 35, 35, 0.262);
+    box-shadow: 19px 20px 20px 12px
+
 }
 
 
 li {
     color: rgb(13, 13, 13);
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     margin-bottom: 4px;
+}
+
+input {
+    border-radius: 40px;
 }
