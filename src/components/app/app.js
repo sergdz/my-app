@@ -150,11 +150,18 @@ class App extends Component {
   render() {
     const { data, item, filter } = this.state
     const visibleData = this.filterProducts(this.onDataChange(data, item), filter)
+    const countProducts = this.state.data.length
+    const bayProducts = this.state.data.filter(item => item.bay).length
+    console.log(countProducts);
+    console.log(bayProducts);
 
 
     return (
       <div className="app">
-        <Header />
+        <Header
+        countProducts={countProducts}
+        bayProducts={bayProducts}
+        />
         <ShoppingFilter
           filter={filter}
           filterState={this.filterState}

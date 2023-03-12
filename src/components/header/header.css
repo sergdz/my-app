@@ -13,7 +13,6 @@
 .header__text {
   font-size: 1.5rem;
   font-weight: bold;
-  margin: 0;
 }
 
 .header__product-count {
@@ -23,6 +22,9 @@
 }
 
 @media (max-width: 767px) {
-  /* стили для мобильных устройств */
+  .header {
+    align-items: baseline;
+  }
+
 
 }
