@@ -1,12 +1,22 @@
-.app{
-    width: 40%;
-    margin: 0 auto;
-    border: 2px solid red;
+#root{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color:#4f8f9164
+
 }
+
+.app{
+    background-color: #F7F5C2;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
 
 li {
     color: rgb(13, 13, 13);
     width: 50%;
     margin: 0 auto;
-    border: 1px solid red;
+    margin-bottom: 4px;
 }

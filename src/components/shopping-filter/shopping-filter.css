@@ -1,0 +1,13 @@
+.shopping__filter-btn {
+    display: flex;
+    justify-content: space-evenly;
+    width: 48%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+.btn.btn-primary{
+    background-color: #5fd9e092;
+    margin-top: 4%;
+    color: black;
+    font-size: 18px;
+}

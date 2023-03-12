@@ -3,35 +3,67 @@ import { Component } from 'react'
 import './list-item.css'
 class ListItem extends Component {
     constructor (props) {
-        super(props)
+        super(props);
         this.state = {
-            active: false
+            bay: false
         }
     }
 
-    onActive = () => {
-        this.setState(({ active }) => ({
+    componentDidMount() {
+        const { id } = this.props;
+        const bay = localStorage.getItem(`bay${id}`);
+        if (bay) {
+          this.setState({ bay: JSON.parse(bay) });
+        }
+      }
 
-            active: !active
-        }))
-    }
+      onActive = (e) => {
+        const { id } = this.props;
+        const bay = !this.state.bay;
+        localStorage.setItem(`bay${id}`, JSON.stringify(bay));
+        this.setState({ bay });
+        this.props.onActive(e);
+      }
+
+
+
 
     render() {
-        const { name, quantity } = this.props;
-        const { active } = this.state
-        let className = 'shopping__list-item-text'
-        if(active){
-            className += ' active'
-        }
-        return (
-            <li className="shopping__list-item">
-                <div className={className} onClick={this.onActive}>Продукт {name}. Количество: {quantity}</div>
+        let { name, quantity, onDelete } = this.props;
+        let bay = this.state.bay
 
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-                        <label className="form-check-label" for="flexCheckDefault">
+        let className = 'shopping__list-item'
+        if (bay) {
+             className += ' active'
+
+        }
+
+
+
+        return (
+            <li className={className}>
+
+                <div className='shopping__list-item-text' > <p>Продукт:</p> {name} <p>Количество:</p> {quantity}</div>
+                <div className='shopping__list-item-radio'>
+                    <div className="form-check" >
+                        <input className="form-check-input" onChange={this.onActive} checked={bay}  data-toggle="bay" type="checkbox" value="f" id="flexCheckDefault" />
+                        <label className="form-check-label" htmlFor="flexCheckDefault">
                         </label>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="currentColor"
+                        className="bi bi-trash3"
+                        viewBox="0 0 16 16"
+                        onClick={onDelete}
+                    >
+                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"
+
+                        />
+                    </svg>
                 </div>
+
             </li>
 
         );

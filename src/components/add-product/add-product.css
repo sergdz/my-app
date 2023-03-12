@@ -1,0 +1,5 @@
+.add-product-form {
+display: flex;
+justify-content: space-around;
+margin: 2%;
+}

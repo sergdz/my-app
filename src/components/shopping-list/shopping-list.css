@@ -1,5 +1,4 @@
 .shopping__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+   display: flex;
+   flex-direction: column;
 }
